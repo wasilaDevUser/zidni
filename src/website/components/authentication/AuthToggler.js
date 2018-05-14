@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
-// import ForgetPassword from "./ForgetPassword";
-// import PasswordConfirmation from "./PasswordConfirmation";
+import ForgetPassword from "./ForgetPassword";
+import PasswordConfirmation from "./PasswordConfirmation";
 
 const AuthTabPane = styled(Tab.Pane)`
   &&& {
@@ -14,7 +14,7 @@ const AuthTabPane = styled(Tab.Pane)`
     box-shadow: none;
     margin-top: 2rem;
 
-    &:after{
+    /* &:after{
       content: "";
       width: 20px;
       height: 20px;
@@ -23,7 +23,7 @@ const AuthTabPane = styled(Tab.Pane)`
       position: absolute;
       z-index: 10000;
       top: 0;
-      }
+      } */
   }
 `;
 
@@ -57,6 +57,30 @@ const panes = [
     render: () => (
       <AuthTabPane attached={false}>
         <LoginForm />
+      </AuthTabPane>
+    )
+  },
+  {
+    menuItem: (
+      <AuthTabMenuItem key="register" onClick={handleClick}>
+        Register
+      </AuthTabMenuItem>
+    ),
+    render: () => (
+      <AuthTabPane attached={false}>
+        <RegisterForm />
+      </AuthTabPane>
+    )
+  },
+  {
+    menuItem: (
+      <AuthTabMenuItem key="pass" onClick={handleClick}>
+        confirm
+      </AuthTabMenuItem>
+    ),
+    render: () => (
+      <AuthTabPane attached={false}>
+        <RegisterForm />
       </AuthTabPane>
     )
   },
