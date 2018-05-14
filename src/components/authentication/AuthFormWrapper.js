@@ -10,7 +10,7 @@ import Button from "../common/Button";
 
 const AuthModal = styled(Modal)`
   &&& {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
     margin-right: auto;
     margin-left: auto;
     box-shadow: none;

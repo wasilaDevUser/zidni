@@ -13,6 +13,17 @@ const AuthTabPane = styled(Tab.Pane)`
     border: none;
     box-shadow: none;
     margin-top: 2rem;
+
+    &:after{
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: #000;
+      transform: rotate(45deg);
+      position: absolute;
+      z-index: 10000;
+      top: 0;
+      }
   }
 `;
 
@@ -21,16 +32,9 @@ const AuthTabMenuItem = styled(Menu.Item)`
     color: #fff;
     border-bottom-color: ${props => (props.active ? "#fff" : "transparent")};
     position: relative;
-    display: block;
+    display: inline-block;
 
-    &::before {
-      content: "";
-      width: 20px;
-      height: 20px;
-      background: #fff;
-      transform: rotate(45deg);
-      position: absolute;
-    }
+      
 
     &:hover {
       color: #fff;
@@ -73,7 +77,7 @@ const panes = [
 const AuthToggler = () => {
   return (
     <div>
-      <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+      <Tab menu={{ secondary: true, pointing: true, style: {display: "flex", justifyContent: "center"} }} panes={panes} />
     </div>
   );
 };
